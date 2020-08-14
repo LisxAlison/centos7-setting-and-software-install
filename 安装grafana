@@ -1,0 +1,23 @@
+参考：
+https://devconnected.com/how-to-install-grafana-on-centos-8/
+https://mirrors.tuna.tsinghua.edu.cn/help/grafana/
+
+将Grafana存储库添加到本地YUM存储库
+新建 /etc/yum.repos.d/grafana.repo，内容为
+[grafana]
+name=grafana
+baseurl=https://mirrors.tuna.tsinghua.edu.cn/grafana/yum/rpm
+repo_gpgcheck=0
+enabled=1
+gpgcheck=0
+
+执行：
+$ sudo yum makecache
+$ sudo yum install grafana
+$ sudo yum update
+$ sudo yum install grafana
+$ sudo systemctl start grafana-server
+$ sudo systemctl status grafana-server
+
+访问
+http://localhost:3000
